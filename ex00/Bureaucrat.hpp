@@ -16,12 +16,11 @@ class Bureaucrat
         Bureaucrat &operator=(const Bureaucrat &other);
         std::string const &getName() const;
         int getGrade() const;
-        void GradeTooLowException(int grade);
-        void GradeTooHighException(int grade);
+        void GradeTooLowException();
+        void GradeTooHighException();
         void incrementGrade();
         void decrementGrade();
 };
 std::ostream	&operator<<(std::ostream &o, const Bureaucrat &fixed);
-
 
 #endif
