@@ -2,7 +2,7 @@
 
 std::ostream	&operator<<(std::ostream &o, const Bureaucrat &fixed)
 {
-    o << fixed.getName()<< ",bureaucrat grade" <<fixed.getGrade() << std::endl;
+    o << fixed.getName()<< " ,bureaucrat grade " <<fixed.getGrade() << std::endl;
     return o;
 }
 
@@ -65,4 +65,32 @@ void Bureaucrat::decrementGrade()
     if (grade >= 150)
         throw GradeTooLowException();
     grade++;
+}
+
+
+void Bureaucrat::signForm(AForm& form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << name << " signed " << form.getName() << std::endl;
+    }
+    catch (std::exception& e)
+    {
+        std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+
+}
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+
+    }
+    catch (std::exception& e)
+    {
+        std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }

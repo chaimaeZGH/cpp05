@@ -2,7 +2,9 @@
 #define Bureaucrat_HPP
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
 private:
@@ -29,7 +31,8 @@ public:
         public:
             const char* what() const throw();
     };
+    void signForm(Form& form);
 };
-std::ostream	&operator<<(std::ostream &o, const Bureaucrat &fixed);
+std::ostream	&operator<<(std::ostream &o, const Bureaucrat &buro);
 
 #endif
