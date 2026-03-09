@@ -23,7 +23,8 @@ Intern &Intern::operator=(const Intern &copy)
 AForm *Intern::makeForm(std::string formName, std::string target)
 {
     std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-    for (int i = 0; i < 3; i++)
+    int i = 0;
+    for (; i < 3; i++)
     {
         if (formName == forms[i])
             break;
