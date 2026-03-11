@@ -10,7 +10,11 @@ int main()
     {
         fr.beSigned(brr);
     }
-     catch (std::exception& e)
+    // catch (std::exception& e)
+    // {
+    //     std::cout << "Exception: " << e.what() << std::endl;
+    // }
+    catch (Form::GradeTooLowException& e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
@@ -19,11 +23,15 @@ int main()
     try
     {
         fr.beSigned(brr);
-        std::cout <<"it's signed" << std::endl;
+        std::cout << "it's signed" << std::endl;
     }
-     catch (std::exception& e)
+    catch (Form::GradeTooLowException& e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
+    // catch (std::exception& e)
+    // {
+    //     std::cout << "Exception: " << e.what() << std::endl;
+    // }
     std::cout << fr ;
 }

@@ -14,6 +14,7 @@
 int main()
 {
     Intern intern;
+    std::srand(std::time(NULL));
     std::string formNames[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
     
     std::string targets[] = {"Garden","Bender", "Arthur"};

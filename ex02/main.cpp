@@ -8,6 +8,7 @@
 
 int main()
 {
+    std::srand(std::time(NULL));
     try
     {
         Bureaucrat boss("Boss", 1);
