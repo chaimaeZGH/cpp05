@@ -28,6 +28,11 @@ class AForm
             public:
                 const char* what() const throw();
         };
+        class FormNotSignedException : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
         void beSigned(Bureaucrat& br);
         int getGrade_sig() const;
         int getGrade_exc() const;

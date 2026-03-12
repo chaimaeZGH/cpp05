@@ -30,7 +30,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
     if (this->getSignd() == false)
-        throw "Form not signed";
+        throw AForm::FormNotSignedException();
+        // throw "Form not signed";
     if (executor.getGrade() > this->getGrade_exc())
         throw AForm::GradeTooLowException();
     else

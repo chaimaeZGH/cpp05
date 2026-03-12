@@ -28,7 +28,7 @@ int main()
 
         b.decrementGrade(); // should throw
     }
-   catch (Bureaucrat::GradeTooHighException& e)
+    catch (Bureaucrat::GradeTooHighException& e)
     {  // Catch TYPE 1
         std::cout << "High: " << e.what() << std::endl;
     }
